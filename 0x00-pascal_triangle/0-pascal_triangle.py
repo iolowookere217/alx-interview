@@ -7,7 +7,8 @@ representing the Pascal’s triangle of n:
 
 
 def pascal_triangle(n):
-    # declaring empty list
+    '''Pascal Triangle
+    '''
     triangle = []
     for i in range(n):
         row = []
