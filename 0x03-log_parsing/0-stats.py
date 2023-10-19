@@ -19,8 +19,8 @@ def print_stats():
 
 try:
     for line in sys.stdin:
+        line = line.split()
         try:
-            line = line.split()
             fileSize = int(line[-1])
             total_file_size += fileSize
             statusCode = int(line[-2])
@@ -42,5 +42,5 @@ try:
     if (number_of_lines == 0) or (number_of_line % 10 != 0):
         print_stats()
 
-except KeyboardInterrupt:
+except (KeyboardInterrupt):
     print_stats()
