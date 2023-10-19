@@ -39,8 +39,8 @@ try:
         if (number_of_lines % 10) == 0:
             print_stats()
 
-    if (number_of_lines == 0) or (number_of_line % 10 != 0):
+    if (number_of_lines == 0) or (number_of_lines % 10 != 0):
         print_stats()
 
-except (KeyboardInterrupt):
+except (KeyboardInterrupt,EOFError):
     print_stats()
