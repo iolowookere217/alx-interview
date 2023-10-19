@@ -42,5 +42,5 @@ try:
     if (number_of_lines == 0) or (number_of_lines % 10 != 0):
         print_stats()
 
-except (KeyboardInterrupt,EOFError):
+except (KeyboardInterrupt):
     print_stats()
