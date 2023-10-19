@@ -11,7 +11,7 @@ status_code_map = {}
 
 
 def print_stats():
-     """handles the printing out of the statistics"""
+    """handles the printing out of the statistics"""
     print(f"File Size: {total_file_size}")
     for status, count in sorted(status_code_map.items()):
         print(f"{status}: {count}")
