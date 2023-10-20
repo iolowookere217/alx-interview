@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-"""A script for parsing HTTP request logs from stdin
-"""
-
+"""A script for parsing HTTP request logs from stdin"""
 import sys
 
 status_code_list = [200, 301, 400, 401, 403, 404, 405, 500]
@@ -19,11 +17,11 @@ def print_stats():
 
 try:
     for line in sys.stdin:
-        line = line.split()
+        split_line = line.split()
         try:
-            fileSize = int(line[-1])
+            fileSize = int(split_line[-1])
             total_file_size += fileSize
-            statusCode = int(line[-2])
+            statusCode = int(split_line[-2])
 
             if statusCode in status_code_list:
                 if statusCode in status_code_map:
@@ -36,7 +34,7 @@ try:
 
         number_of_lines += 1
 
-        if (number_of_lines % 10) == 0:
+        if number_of_lines % 10 == 0:
             print_stats()
 
     if (number_of_lines == 0) or (number_of_lines % 10 != 0):
