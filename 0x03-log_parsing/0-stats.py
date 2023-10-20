@@ -19,15 +19,15 @@ try:
     for line in sys.stdin:
         split_line = line.split()
         try:
-            fileSize = int(split_line[-1])
-            total_file_size += fileSize
-            statusCode = int(split_line[-2])
+            file_size = int(split_line[-1])
+            total_file_size += file_size
+            status_code = int(split_line[-2])
 
-            if statusCode in status_code_list:
-                if statusCode in status_code_map:
-                    status_code_map[statusCode] += 1
+            if status_code in status_code_list:
+                if status_code in status_code_map:
+                    status_code_map[status_code] += 1
                 else:
-                    status_code_map[statusCode] = 1
+                    status_code_map[status_code] = 1
 
         except ValueError:
             pass
