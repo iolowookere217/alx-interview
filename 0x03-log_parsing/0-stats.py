@@ -22,7 +22,6 @@ try:
             file_size = int(split_line[-1])
             total_file_size += file_size
             status_code = int(split_line[-2])
-
             if status_code in status_code_list:
                 if status_code in status_code_map:
                     status_code_map[status_code] += 1
@@ -42,3 +41,4 @@ try:
 
 except (KeyboardInterrupt):
     print_stats()
+
