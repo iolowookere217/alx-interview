@@ -1,26 +1,34 @@
 #!/usr/bin/python3
-""" Defines a method to check UTF8 Valid integers """
+"""This module defines a function validUTF8
+
+        UTF8 Format:
+
+        1-byte Sequence: 0xxxxxxx;
+        2-byte Sequence: 110xxxxx 10xxxxxx;
+        3-byte Sequence: 1110xxxx 10xxxxxx 10xxxxxx;
+        4-byte Sequence: 11110xxx 10xxxxxx 10xxxxxx 10xxxxxx;
+    """
 
 
 def validUTF8(data):
-    """ Checks UTF8 Valid data set """
-    no_bytes_rem = 0
-    for byt in data:
-        bin_char = format(byt, '08b')
-        if no_bytes_rem == 0:
-            if bin_char.startswith('0'):
+    "convertion to binary and checking validation condition"
+    byts_remaining = 0
+    for item in data:
+        binary_char = format(item, '08b')
+        if byts_remaining == 0:
+            if binary_char.startswith("0"):
                 continue
-            elif bin_char.startswith('110'):
-                no_bytes_rem = 1
-            elif bin_char.startswith('1110'):
-                no_bytes_rem = 2
-            elif bin_char.startswith('11110'):
-                no_bytes_rem = 3
+            elif binary_char.startswith("110"):
+                byts_remaining = 1
+            elif binary_char.startswith("1110"):
+                byts_remaining = 2
+            elif binary_char.startswith("11110"):
+                byts_remaining = 3
             else:
                 return False
         else:
-            if bin_char.startswith('10'):
-                no_bytes_rem -= 1
+            if binary_char.startswith("10"):
+                byts_remaining -= 1
                 continue
             return False
     return True
