@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This module defines a function `validUTF8`
+"""This module defines a function validUTF8
 
         UTF8 Format:
 
@@ -14,8 +14,8 @@ def validUTF8(data):
     "convertion to binary and checking validation condition"
     byts_remaining = 0
     for item in data:
+        binary_char = format(item, '08b')
         if byts_remaining == 0:
-            binary_char = format(item, '08b')
             if binary_char.startswith("0"):
                 continue
             elif binary_char.startswith("110"):
