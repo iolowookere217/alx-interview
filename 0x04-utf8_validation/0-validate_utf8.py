@@ -11,7 +11,6 @@
 
 
 def validUTF8(data):
-    "convertion to binary and checking validation condition"
     byts_remaining = 0
     for item in data:
         binary_char = format(item, '08b')
