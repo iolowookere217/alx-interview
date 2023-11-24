@@ -1,8 +1,13 @@
 #!/usr/bin/python3
+"""This module defines a function `makeChange`"""
+
 from typing import List
 
 
 def makeChange(coins: List, total: int) -> int:
+    """ Determines the fewest number of coins needed to meet a
+        given amount total
+    """
     sorted_coins = sorted(coins, reverse=True)
     used_coins = 0
 
